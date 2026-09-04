@@ -15,7 +15,7 @@ RUN git clone https://github.com/pytest-dev/pytest . \
  && git gc --prune=now \
  && { test ! -s .gitmodules || git submodule update --init --recursive; }
 RUN pip install --no-cache-dir -e ".[dev]" \
-    && pip install --no-cache-dir pytest \
+    && pip install --no-cache-dir "pytest==9.1.1" \
     && test -z "$(git status --porcelain)"
 
 # Disable git commit hooks (pre-commit, husky etc.): dev-workflow tooling, not task content.
